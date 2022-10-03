@@ -28,17 +28,7 @@ compare [fileA] [fileB] --- prints out specific overlaps of files A and B
 quit --- exits the REPL
 help --- display instructions again"
 
-let newstate = {display = [(GREEN,
-                            "
-      _______   _______             __   __   _______   _______   _______
-     |       | |       |           |  |_|  | |       | |       | |       |
-     |   _   | |     __|  _______  |       | |   _   | |  _____| |  _____|
-     |  | |  | |    |    |   _   | |       | |  | |  | | |_____  | |_____
-     |  |_|  | |    |__  |  |_|  | |       | |  |_|  | |_____  | |_____  |
-     |       | |       | |   _   | | ||_|| | |       |  _____| |  _____| |
-     |_______| |_______| |__| |__| |_|   |_| |_______| |_______| |_______|
-");
-                           (TEXT,"Welcome to OCaMOSS!!");(CYAN,help)];
+let newstate = {display = [(TEXT, "Start")];
                 directory = "./" ; results = None; result_files = [];
                 threshold = 0.5}
 
@@ -176,7 +166,7 @@ and handle_compare st a b results =
               (Unix.opendir st.directory) st.directory a l2 in
           let res2 = Preprocessing.get_file_positions
               (Unix.opendir st.directory) st.directory b l1 in
-          print_endline "generating display...";
+          (*print_endline "generating display...";*)
           let padded1 = pad res1 (List.length res2) in
           let padded2 = pad res2 (List.length res1) in
           let newdispl = List.fold_left2 (fun acc r1 r2 ->
@@ -243,16 +233,17 @@ and handle_run st t =
   in
   let concat_result_list lst is_pair =
     List.fold_left (fun a (f,ss) ->
-        (TEXT, Printf.sprintf "%-40s%s" ("File: " ^ f)
-           ((if is_pair then "Similarity score: " else "Overall score: ") ^
+        (TEXT, Printf.sprintf "%s;%s" (f)
+           (
             (string_of_float ss)))::a) []
       (lst |> List.sort (cmp_tuple)|> List.filter (fun (k,s) -> s >= t))
   in
   (*let tm = Sys.time () in*)
-  print_endline "parsing files...";
+  (*print_endline "parsing files...";*)
+
   let parsefiles = parse_dir (Unix.opendir st.directory)
       Comparison.FileDict.empty st.directory in
-  print_endline "generating results...";
+  (*print_endline "generating results...";*)
   let comparison = Comparison.compare parsefiles in
   let files = concat_result_list
       (Comparison.create_sim_list comparison t) false in
@@ -261,14 +252,14 @@ and handle_run st t =
                                      [(GREEN,"Success. There were no plagarised files found.\n")];
                                    results = Some comparison; threshold = t}
   else repl {st with display =
-                       (GREEN,"Success. The list of plagiarised files are:")::files;
+                       files;
                      results = Some comparison; result_files = files; threshold = t}
 
 and handle_pair r st =
   let disp = List.fold_left (fun d (f,v) -> d ^ (match CompDict.find f r with
       | None -> ""
       | Some f_d -> List.fold_left (fun s (f2,ss) -> s ^
-                                                     if ss < st.threshold && f != f2 then "" else Printf.sprintf "%-40s%s" (f)
+                                                     if ss < st.threshold && f != f2 then "" else Printf.sprintf "%s;%s" (f)
                                                          (f2) ^ "\n")
                       "" (create_pair_sim_list f (FileDict.to_list f_d))))
       "" (CompDict.to_list r) in

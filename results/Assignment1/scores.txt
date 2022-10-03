@@ -1,0 +1,6 @@
+{
+    "Camel.txt": 0.801282051282,
+    "Camelcopy3.txt": 0.801282051282,
+    "Camelcopy2.txt": 0.678362573099,
+    "Camelcopy.txt": 0.526315789474
+}

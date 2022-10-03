@@ -1,0 +1,111 @@
+
+      _______   _______             __   __   _______   _______   _______
+     |       | |       |           |  |_|  | |       | |       | |       |
+     |   _   | |     __|  _______  |       | |   _   | |  _____| |  _____|
+     |  | |  | |    |    |   _   | |       | |  | |  | | |_____  | |_____
+     |  |_|  | |    |__  |  |_|  | |       | |  |_|  | |_____  | |_____  |
+     |       | |       | |   _   | | ||_|| | |       |  _____| |  _____| |
+     |_______| |_______| |__| |__| |_|   |_| |_______| |_______| |_______|
+
+Welcome to OCaMOSS!!
+Commands (case-sensitive): 
+
+run [threshold] --- runs oCaMoss on the working directory.
+The threshold argument gives the program the percentage of the file to match
+with another for it to be flagged as plagiarised. It is optional with default
+value 0.5, and must be at least 0.4 and at most 1
+dir --- lists the working directory and the files that it contains
+setdir [dir] --- sets the directory to look for files and resets any results
+results --- lists the file names for which there are results
+results [filename] --- lists the detailed results of overlap for that file
+resultpairs -- lists all the pairs of files for which there are results
+compare [fileA] [fileB] --- prints out specific overlaps of files A and B
+quit --- exits the REPL
+help --- display instructions again
+> Successfully set working directory to: mock_input/student_submissions
+Files: 
+A_1.py
+B.py
+A_2.py
+
+> parsing files...
+generating results...
+Success. The list of plagiarised files are:
+File: A_1.py                            Overall score: 1.
+File: A_2.py                            Overall score: 1.
+> Thank you for using OCaMOSS!!
+
+      _______   _______             __   __   _______   _______   _______
+     |       | |       |           |  |_|  | |       | |       | |       |
+     |   _   | |     __|  _______  |       | |   _   | |  _____| |  _____|
+     |  | |  | |    |    |   _   | |       | |  | |  | | |_____  | |_____
+     |  |_|  | |    |__  |  |_|  | |       | |  |_|  | |_____  | |_____  |
+     |       | |       | |   _   | | ||_|| | |       |  _____| |  _____| |
+     |_______| |_______| |__| |__| |_|   |_| |_______| |_______| |_______|
+
+Welcome to OCaMOSS!!
+Commands (case-sensitive): 
+
+run [threshold] --- runs oCaMoss on the working directory.
+The threshold argument gives the program the percentage of the file to match
+with another for it to be flagged as plagiarised. It is optional with default
+value 0.5, and must be at least 0.4 and at most 1
+dir --- lists the working directory and the files that it contains
+setdir [dir] --- sets the directory to look for files and resets any results
+results --- lists the file names for which there are results
+results [filename] --- lists the detailed results of overlap for that file
+resultpairs -- lists all the pairs of files for which there are results
+compare [fileA] [fileB] --- prints out specific overlaps of files A and B
+quit --- exits the REPL
+help --- display instructions again
+> Successfully set working directory to: mock_input/student_submissions
+Files: 
+A_1.py
+B.py
+A_2.py
+
+> parsing files...
+generating results...
+Success. The list of plagiarised files are:
+File: A_1.py                            Overall score: 1.
+File: A_2.py                            Overall score: 1.
+> Thank you for using OCaMOSS!!
+
+      _______   _______             __   __   _______   _______   _______
+     |       | |       |           |  |_|  | |       | |       | |       |
+     |   _   | |     __|  _______  |       | |   _   | |  _____| |  _____|
+     |  | |  | |    |    |   _   | |       | |  | |  | | |_____  | |_____
+     |  |_|  | |    |__  |  |_|  | |       | |  |_|  | |_____  | |_____  |
+     |       | |       | |   _   | | ||_|| | |       |  _____| |  _____| |
+     |_______| |_______| |__| |__| |_|   |_| |_______| |_______| |_______|
+
+Welcome to OCaMOSS!!
+Commands (case-sensitive): 
+
+run [threshold] --- runs oCaMoss on the working directory.
+The threshold argument gives the program the percentage of the file to match
+with another for it to be flagged as plagiarised. It is optional with default
+value 0.5, and must be at least 0.4 and at most 1
+dir --- lists the working directory and the files that it contains
+setdir [dir] --- sets the directory to look for files and resets any results
+results --- lists the file names for which there are results
+results [filename] --- lists the detailed results of overlap for that file
+resultpairs -- lists all the pairs of files for which there are results
+compare [fileA] [fileB] --- prints out specific overlaps of files A and B
+quit --- exits the REPL
+help --- display instructions again
+> Successfully set working directory to: mock_input/student_submissions
+Files: 
+A_1.py
+B.py
+A_2.py
+
+> parsing files...
+generating results...
+Success. The list of plagiarised files are:
+File: A_1.py                            Overall score: 1.
+File: A_2.py                            Overall score: 1.
+> Thank you for using OCaMOSS!!
+
+
+A_1.py: {score 1, A_2.py, [1,5,9]}

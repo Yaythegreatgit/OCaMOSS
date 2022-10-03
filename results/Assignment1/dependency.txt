@@ -1,0 +1,22 @@
+{
+    "Camelcopy2.txt": [
+        "Camel.txt",
+        "Camelcopy3.txt",
+        "Camelcopy.txt"
+    ],
+    "Camelcopy.txt": [
+        "Camel.txt",
+        "Camelcopy3.txt",
+        "Camelcopy2.txt"
+    ],
+    "Camelcopy3.txt": [
+        "Camel.txt",
+        "Camelcopy.txt",
+        "Camelcopy2.txt"
+    ],
+    "Camel.txt": [
+        "Camelcopy3.txt",
+        "Camelcopy.txt",
+        "Camelcopy2.txt"
+    ]
+}

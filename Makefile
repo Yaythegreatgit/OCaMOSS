@@ -9,3 +9,6 @@ clean:
 
 run:
 	ocamlbuild -use-ocamlfind main.native && mv main.native ocamoss && ./ocamoss
+	
+compile:
+	ocamlopt -o -use-ocmalfind
